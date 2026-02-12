@@ -1,0 +1,89 @@
+package progra3.Java_Maven;
+import java.util.Arrays;
+import java.util.stream.*;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hola mundo desde JAVA");
+		
+		int a = 6;
+		int b = 7;
+		
+		int resultado = a*b;
+		
+		System.out.println("El resultado es: "+ resultado);
+	
+		// 4.1
+		// Declaración
+		int[] numeros; // por lo que investigue estas dos formas de declarar son iguales
+		String nombres[]; // pero la forma recomendada es la donde se colocan lo [] con el tipo
+		
+		//Inicialización
+		int[] numeros2 = new int[5]; // Crea el espacio de memoria necesario para luego rellenar
+		numeros2[0] = 5;
+		numeros2[1] = 4;
+		numeros2[2] = 2;
+		numeros2[3] = 1;
+		numeros2[4] = 3;
+		char[] caracteres = {'b','c','a'}; // Crea el tamaño exacto para que se cree con los datos
+		// en ambos casos el tamaño es inmutable
+		
+		//4.2
+		// Arrays.sort, este lo que hace es ordenar los arrays de manera
+		// ascendente, se puede tanto en todo el array como en sub arrays 
+
+		Arrays.sort(numeros2, 2,4); //para order "subarrays" se le tiene quedar el intervalo con 
+		System.out.println(Arrays.toString(numeros2));//con los indices
+		
+		
+		Arrays.sort(numeros2);
+		System.out.println(Arrays.toString(numeros2));
+		Arrays.sort(caracteres);
+		System.out.println(Arrays.toString(caracteres));
+		
+		//Arrays.binarySearch, este metodo lo que hace es una busqueda binaria en el array
+		// para poder ser utilizado el array debe haber sido ordenado por Arrays.sort, sino
+		// regresaria un indefinido, este metodo devuelve el indice del valor a buscar.
+		
+		System.out.println("Buscando al 3: "+Arrays.binarySearch(numeros2, 3));
+		//este array ya estaba ordenado, por el metodo
+		
+		//Array.copyOf(), este copia los arrays, puede ser completos o entre rangos, pero lo
+		// importantes, es que dependiendo del tipo de array si es de datos primitivos este va a copiar por valor
+		// si es de objetos, copia por referencia.
+		
+		int[] NumerosCopia = Arrays.copyOf(numeros2, numeros2.length);
+		System.out.println("NumerosCopia: "+Arrays.toString(NumerosCopia));
+		
+		NumerosCopia[0] = 6; // no pasa nada en el original, ya que creo una copia del valor
+		System.out.println("Numeros2: "+Arrays.toString(numeros2));
+		
+		//Arrays.fill. es un metodo que sirve para rellenar en un rango a un array de un valor en especifico
+		int[] numero2 = new int [5];
+		Arrays.fill(numero2, 2);
+		System.out.println(Arrays.toString(numero2));
+		Arrays.fill(numero2, 1,3,6); // seria del indice uno hasta el 3 excluyendo este y rellenando de 6
+		System.out.println(Arrays.toString(numero2));
+		
+		//Arrays.equals este es un metodo que compara dos arrays para ver si son iguales, puede ser 1d,2d,3d...
+		 int[] array1 = {1, 2, 3, 4};
+	     int[] array2 = {1, 2, 3, 4};
+	     int[] array3 = {1, 2, 4, 3};
+	        
+	        System.out.println("arr1 es igual a arr2: " + Arrays.equals(array1, array2));
+	        System.out.println("arr1 es igual a arr3: " + Arrays.equals(array1, array3));
+	              
+	    //Arrays.toString es un metodo que convierte un array a una representación textual
+	    //si el array es de objetos y este tiene arrays, va a mostrar direcciones de memoria.
+	     System.out.println(Arrays.toString(numeros2));
+	     
+	    //Array.stream, convierte un array en un stream, esto es una forma secuencial de procesar algo
+	    // no se tiene que esperar que se haya leido todo, si no que conforme lo va leyendo lo va mandando
+	    String[] NombrestoStream = {"Josue", "Rafael"};
+	    Stream<String> st = Arrays.stream(NombrestoStream);
+	    
+	    st.forEach(s -> System.out.print(s+" "));
+	}
+
+}

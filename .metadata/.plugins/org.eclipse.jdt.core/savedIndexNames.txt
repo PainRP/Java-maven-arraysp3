@@ -1,0 +1,10 @@
+INDEX VERSION 1.134+C:\Users\SANDRA\Desktop\Universidad\2026\Semestre 5\Progra 3\Java+MavenArray\.metadata\.plugins\org.eclipse.jdt.core
+2748517129.index
+3661250718.index
+2692764196.index
+2223041582.index
+3518628177.index
+1865797976.index
+278338817.index
+1494234830.index
+1654275758.index

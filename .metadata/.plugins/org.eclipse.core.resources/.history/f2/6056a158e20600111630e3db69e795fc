@@ -1,0 +1,30 @@
+package progra3.Java_Maven;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hola mundo desde JAVA");
+		
+		int a = 6;
+		int b = 7;
+		
+		int resultado = a*b;
+		
+		System.out.println("El resultado es: "+ resultado);
+	
+		// 4.
+		// Declaración
+		int[] numeros; // por lo que investigue estas dos formas de declarar son iguales
+		String nombres[]; // pero la forma recomendada es la donde se colocan lo [] con el tipo
+		
+		//Inicialización
+		int[] numeros2 = new int[2]; // Crea el espacio de memoria necesario para luego rellenar
+		numeros2[0] = 10;
+		numeros2[1] = 20;
+		String[] nombres2 = {"Jose","Pedro"}; // Crea el tamaño exacto para que se cree con los datos
+		
+	
+	}
+
+}
